@@ -1,61 +1,59 @@
-import React, {Component} from 'react'
+import React from 'react'
 import Nav from './Nav'
 
-export default class Header extends Component {
+export default class Header extends React.Component {
     constructor(){
         super()
+
+        this.state = {
+            menuOpen: "closed"
+        }
+
+        this.menu = this.menu.bind(this)
     }
 
+    menu = () => {
+        if(this.state.menuOpen === 'closed'){
+            this.setState({menuOpen: 'pickle'})
+        }else{
+            this.setState({menuOpen: 'closed'})
+        }
+    }
 
 
     render(){
         return(
-            <div className='navbar'>
-                <div className='container'>
-                    <a className='title'>Start Bootstrap</a>
-                    <button className='navbar-toggler' type='button'>
+                <nav>
+                    <button className='menu-button' onClick={this.menu}>
                         MENU 
-                        {/* <img src={`https://cdn1.iconfinder.com/data/icons/thin-ui-1/100/Noun_Project_100Icon_1px_grid_thin_ic_menu-512.png`}/> */}
-                        <svg viewBox="0 0 100 80" width="40" height="20">
+                        {/* <img src={`https://cdn1.iconfinder.com/data/icons/thin-ui-1/100/Noun_Project_100Icon_1px_grid_thin_ic_menu-512.png`} onClick={this.menu}/> */}
+                        <svg viewBox="0 0 100 80" width="40" height="10">
                             <rect width="70" height="20"></rect>
                             <rect y="30" width="70" height="20"></rect>
                             <rect y="60" width="70" height="20"></rect>
                         </svg>
                     </button>
-                    <div className='navbar-collapse'>
-                        <ul>
+                    
+                        <ul className={this.state.menuOpen === 'closed' ? "closed" : ''}>
                             <li className='nav-item'>
-                                <a className='nav-link'>SERVICES</a>
+                                <a>SERVICES</a>
                             </li>
                             <li className='nav-item'>
-                                <a className='nav-link'>PORTFOLIO</a>
+                                <a>PORTFOLIO</a>
                             </li>
                             <li className='nav-item'>
-                                <a className='nav-link'>ABOUT</a>
+                                <a>ABOUT</a>
                             </li>
                             <li className='nav-item'>
-                                <a className='nav-link'>TEAM</a>
+                                <a>TEAM</a>
                             </li>
                             <li className='nav-item'>
-                                <a className='nav-link'>CONTRACT</a>
+                                <a>CONTRACT</a>
                             </li>
                             
                         </ul>
-                    </div>
-                </div>
-            </div>
+                </nav>
             
         )
     }
 }
-
-
-{/* <nav>
-                <ul>
-                    <li>SERVICES</li>
-                    <li>PORTFOLIO</li>
-                    <li>ABOUT</li>
-                    <li>TEAM</li>
-                    <li>CONTRACT</li>
-                </ul>
-            </nav> */}

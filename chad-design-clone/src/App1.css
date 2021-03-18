@@ -12,8 +12,17 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem 1rem;
-    margin: 5px auto;
     background-color: khaki;
+}
+
+title {
+        display: inline-block;
+        padding-top: 0.3125rem;
+        padding-bottom: 0.3125rem;
+        margin-right: 1rem;
+        font-size: 1.25rem;
+        line-height: inherit;
+        white-space: nowrap;
 }
 
 .container {
@@ -24,8 +33,29 @@ body {
     margin-left: auto;
     background-color: grey;
     display: flex;
-    
+
 }
+
+  @media (min-width: 576px) {
+    .container-sm, .container {
+      max-width: 540px;
+    }
+  }
+  @media (min-width: 768px) {
+    .container-md, .container-sm, .container {
+      max-width: 720px;
+    }
+  }
+  @media (min-width: 992px) {
+    .container-lg, .container-md, .container-sm, .container {
+      max-width: 960px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .container-xl, .container-lg, .container-md, .container-sm, .container {
+      max-width: 1140px;
+    }
+  }
 
 .navbar-toggler {
     padding: 0.25rem 0.75rem;
@@ -36,6 +66,82 @@ body {
     border-radius: 0.25rem;
 }
 
+.navbar-collapse {
+    flex-basis: 100%;
+    flex-grow: 1;
+    align-items: center;
+}
+
+.navbar-nav .show{
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.collapse:not(.show){
+    display:none;
+}
+
+.fade:not(.show) {
+    opacity: 0;
+  }
+  
+.collapse:not(.show) {
+    display: none;
+  }
+
+.dropdown-menu.show {
+    display: block;
+  }
+
 button, [type=button] {
     -webkit-appearance: button;
+}
+
+.nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+  }
+.nav-link:hover, .nav-link:focus {
+    text-decoration: none;
+  }
+
+.nav-link.disabled {
+    color: #6c757d;
+    pointer-events: none;
+    cursor: default;
+  }
+
+#mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
+    color: #fed136;
+  }
+
+.navbar-nav {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+  }
+.navbar-nav .nav-link {
+    padding-right: 0;
+    padding-left: 0;
+  }
+.navbar-nav .dropdown-menu {
+    position: static;
+    float: none;
+  }
+  
+.navbar-text {
+    display: inline-block;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+@media (min-width: 576px){
+    .navbar-expand-sm .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+      }
+    .navbar-expand-sm .navbar-toggler {
+        display: none;
+      }
 }
