@@ -1,0 +1,41 @@
+body {
+    display: block;
+    margin: 8px;
+}
+
+.navbar {
+    width: 100vw;
+    height: 10%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    margin: 5px auto;
+    background-color: khaki;
+}
+
+.container {
+    width: 100%;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: grey;
+    display: flex;
+    
+}
+
+.navbar-toggler {
+    padding: 0.25rem 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+
+button, [type=button] {
+    -webkit-appearance: button;
+}
